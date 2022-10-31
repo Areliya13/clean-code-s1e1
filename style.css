@@ -12,7 +12,7 @@ body {
   text-align: right;
 }
 
-.info-img {
+.info__img {
   width: 100%;
 }
 
@@ -103,7 +103,7 @@ button{
 }
 
 /* New Task */
-.new-task__label {
+.add-task__label {
   display: block;
   margin: 0 0 20px;
 }
