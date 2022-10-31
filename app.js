@@ -18,6 +18,7 @@ var completedTasksHolder=document.getElementById("cmpltd-tasks");//completed-tas
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
+    listItem.className="todo-item";
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
@@ -33,18 +34,24 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="checkbox";
     editInput.type="text";
     editInput.className="task";
+    editInput.classList.add("input_size_m");
+    editInput.classList.add("label_hidden");
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit-button";
-
-    deleteButton.className="delete-button";
+    editButton.className="button";
+    editButton.classList.add("edit-button");
+    
+    deleteButton.className="button";
+    deleteButton.classList.add("delete-button");
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.className="delete-button__img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -100,6 +107,9 @@ var editTask=function(){
 
     //toggle .editmode on the parent.
     listItem.classList.toggle("todo-item_edit_mode");
+    label.classList.toggle("label_hidden");
+    editInput.classList.toggle("task_edit_mode");
+    editInput.classList.toggle("label_hidden");
 };
 
 
@@ -121,6 +131,7 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    listItem.children[1].classList.add("cmplt_task")
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -133,6 +144,7 @@ var taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
+    listItem.children[1].classList.remove("cmplt_task")
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
