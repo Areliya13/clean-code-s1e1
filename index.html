@@ -1,19 +1,76 @@
+<!DOCTYPE html>
 <html>
-<HEAD><title>Todo App</title>
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css" type="text/css" MEDIA="screen" charset="utf-8">
-</HEAD>
-<body>
-<div class="aaa"><img src="./eisenhower-matrix.jpg"><a class='more_inf' href="https://goal-life.com/page/method/matrix-eisenhower">Want more details&quest;</a></div>
-<div class="centered-main-page-element"><p id='topSectionForAddingElementToList'><label for="new-task">Add Item</label><div class="task-row-wrapper"><input id='new-task'class="task" type="text"><button>Add</button></div>
-</p><h3>Todo</h3>
-<ul id='incompleteTasks'>
-<li><input type='checkbox'><label class="task">Pay Bills</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button></li>
-<li class="editMode"><input type="checkbox"><label class="task">Go Shopping</label><input type="text" value="Go Shopping" class="task"><button class='edit'>Save</button><button class="delete"><img src="./remove.svg"></button></li>
-</ul><h3>Completed</h3><ul id="completed-tasks"><li><input type="checkbox" checked><label class="task">See the Doctor</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button>
-</li>
-</ul>
-</div>
-<script type="text/javascript" SRC="app.js"></script>
-</body>
+  <head>
+    <title>Todo App</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="style.css"
+          media="screen"
+          charset="utf-8">
+  </head>
+  <body>
+    <header class="info">
+      <img src="./eisenhower-matrix.jpg"
+           alt="The Eisenhower Matrix designed to help you prioritize a list of tasks or agenda items
+           by first categorizing those items according to their urgency and importance.
+           This approach consists of drawing a four-box square with an x-axis labeled Urgent and Not Urgent,
+           and the y-axis labeled Important and Not Important. Then, group the items on your list into one of the four boxes,
+           with the Urgent-and-Important box in the upper left requiring your immediate action."
+           class="info__img">
+      <a class="link"
+          href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+    </header>
+    <article class="container">
+      <section class="add-task">
+        <h3 class="add-task__label subtitle">Add Item</h3>
+        <div class="row-wrapper">
+          <input class="task new-task input_size_l"
+                 type="text">
+          <button class="button">Add</button>
+        </div>
+      </section>
+      <h3 class="subtitle">Todo</h3>
+      <ul class="todo-list">
+        <li class="todo-item">
+          <input type="checkbox"
+                 class="checkbox">
+          <label class="label">Pay Bills</label>
+          <input type="text"
+                 class="task input_size_m label_hidden">
+          <button class="button edit-button">Edit</button>
+          <button class="button delete-button">
+            <img src="./remove.svg" class="delete-button__ico" alt="">
+          </button>
+        </li>
+        <li class="todo-item todo-item_edit_mode">
+          <input type="checkbox"
+                 class="checkbox">
+          <label class="label label_hidden">Go Shopping</label>
+          <input type="text"
+                 value="Go Shopping"
+                 class="task input_size_m task_edit_mode">
+          <button class="button edit-button">Save</button>
+          <button class="button delete-button">
+            <img src="./remove.svg" class="delete-button__ico" alt="">
+          </button>
+        </li>
+      </ul>
+      <h3 class="subtitle">Completed</h3>
+      <ul class="cmpltd-tasks">
+        <li class="todo-item">
+          <input type="checkbox"
+                 class="checkbox" checked>
+          <label class="label cmplt_task">See the Doctor</label>
+          <input type="text"
+                 class="task input_size_m label_hidden">
+          <button class="button edit-button">Edit</button>
+          <button class="button delete-button">
+            <img src="./remove.svg" class="delete-button__ico" alt="">
+          </button>
+        </li>
+      </ul>
+    </article>
+    <script src="app.js"></script>
+  </body>
 </html>
